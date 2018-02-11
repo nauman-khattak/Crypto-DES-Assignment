@@ -167,7 +167,7 @@ class DES {
 			}
 		}
                 //Printing hexadecimal plaintext in binary
-/***********/   System.out.println("PT = "+Arrays.toString(inputBits).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("PT = "+Arrays.toString(inputBits).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		
 		// Similar process is followed for the 16 bit key
 		System.out.println("\nEnter the key as a 16 character hexadecimal value:");
@@ -183,7 +183,7 @@ class DES {
 			}
 		}
                 //Printing hexadecimal key in binary
-/***********/   System.out.println("Key = "+Arrays.toString(keyBits).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("Key = "+Arrays.toString(keyBits).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		
 		
 		// permute(int[] inputBits, int[] keyBits, boolean isDecrypt)
@@ -202,7 +202,7 @@ class DES {
 		for(int i=0 ; i < inputBits.length ; i++) {
 			newBits[i] = inputBits[IP[i]-1];
 		}
-/***********/   System.out.println("IP = "+ Arrays.toString(newBits).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("IP = "+ Arrays.toString(newBits).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		
 		// 16 rounds will start here
 		// L and R arrays are created to store the Left and Right halves of the
@@ -219,7 +219,7 @@ class DES {
 			D[i-28] = keyBits[PC1[i]-1];
 		}
                 
-/***********/   System.out.println("PC1 = "+Arrays.toString(C).replace(",", "").replace("[", "").replace("]", " ")+Arrays.toString(D).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("PC1 = "+Arrays.toString(C).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "")+Arrays.toString(D).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		
 		// After PC1 the first L and R are ready to be used and hence looping
 		// can start once L and R are initialized
@@ -250,10 +250,10 @@ class DES {
 			// in R and new R is stored in L, thus exchanging R and L for the
 			// next round.
 			int newL[] = xor(L, newR);
-/***********/           System.out.println("\nFinal output = "+Arrays.toString(newL).replace(",", "").replace("[", "").replace("]", " ")+Arrays.toString(R).replace(",", "").replace("[", "").replace("]", ""));
+/***********/           System.out.println("\nFinal output = "+Arrays.toString(newL).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "")+Arrays.toString(R).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 			L = R;
 			R = newL;
-/***********/           System.out.println("Swapped Final output = "+Arrays.toString(L).replace(",", "").replace("[", "").replace("]", " ")+Arrays.toString(R).replace(",", "").replace("[", "").replace("]", ""));                        
+/***********/           System.out.println("Swapped Final output = "+Arrays.toString(L).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "")+Arrays.toString(R).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));                        
 //			System.out.print("L = ");
 //			displayBits(L);
 //			System.out.print("R = ");
@@ -306,9 +306,9 @@ class DES {
 		// leftShift() method is used for rotation (the rotation is basically)
 		// a left shift operation, hence the name.
 		C1 = leftShift(C, rotationTimes);
-/***********/   System.out.println("LS"+round+" = "+Arrays.toString(C1).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("LS"+round+" = "+Arrays.toString(C1).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		D1 = leftShift(D, rotationTimes);
-/***********/   System.out.println("LS"+round+" = "+Arrays.toString(D1).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("LS"+round+" = "+Arrays.toString(D1).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		// CnDn stores the combined C1 and D1 halves
 		int CnDn[] = new int[56];
 		System.arraycopy(C1, 0, CnDn, 0, 28);
@@ -331,15 +331,15 @@ class DES {
 		// Method to implement Fiestel function.
 		// First the 32 bits of the R array are expanded using E table.
                 
-                System.out.println("Output of PC2 = K"+n+" = "+Arrays.toString(roundKey).replace("[", "").replace(",", "").replace("]", ""));
+                System.out.println("Output of PC2 = K"+n+" = "+Arrays.toString(roundKey).replace("[", "").replace(",", "").replace("]", "").replace(" ", ""));
 		int expandedR[] = new int[48];
 		for(int i=0 ; i < 48 ; i++) {
 			expandedR[i] = R[E[i]-1];
 		}
-/***********/   System.out.println("EP = "+Arrays.toString(expandedR).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("EP = "+Arrays.toString(expandedR).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		// We xor the expanded R and the generated round key
 		int temp[] = xor(expandedR, roundKey);
-/***********/   System.out.println("XOR = "+Arrays.toString(temp).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println("XOR = "+Arrays.toString(temp).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		// The S boxes are then applied to this xor result and this is the
 		// output of the Fiestel function.
 		int output[] = sBlock(temp);
@@ -396,17 +396,19 @@ class DES {
 /***********/           System.out.print("S"+i+" = ");
 			for(int j=0 ; j < 4 ; j++) {
 				output[(i*4) + j] = Integer.parseInt(s.charAt(j) + "");
-/***********/           System.out.print(s.charAt(j)+" ");
+/***********/           System.out.print(s.charAt(j));
 			}
 /***********/           System.out.println(""); 
 		}
+                //printing combined output of s boxes
+/***********/   System.out.println("S boxes combined output = "+Arrays.toString(output).replace("[", "").replace("]", "").replace(",", "").replace(" ", ""));
 		// P table is applied to the output and this is the final output of one
 		// S-box round:
 		int finalOutput[] = new int[32];
 		for(int i=0 ; i < 32 ; i++) {
 			finalOutput[i] = output[P[i]-1];
 		}
-/***********/   System.out.print("P = "+Arrays.toString(finalOutput).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.print("P = "+Arrays.toString(finalOutput).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		return finalOutput;
 	}
 	
@@ -436,6 +438,6 @@ class DES {
 			}
 //			System.out.print(Integer.toHexString(Integer.parseInt(output, 2)));
 		}
-/***********/   System.out.println(" = "+Arrays.toString(bits).replace(",", "").replace("[", "").replace("]", ""));
+/***********/   System.out.println(" = "+Arrays.toString(bits).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 	}
 }
