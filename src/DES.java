@@ -1,9 +1,9 @@
+import java.util.*;
+
 /**
  *
  * @author Muhammad NaumanTariq
  */
-
-import java.util.*;
 
 class DES {
 	// Initial Permutation table
@@ -238,11 +238,11 @@ class DES {
 			// for decryption.
 			int newR[] = new int[0];
 			if(isDecrypt) {
-				newR = fiestel(R, subkey[15-n]);
+				newR = fiestel(R, subkey[15-n], n);
 //				System.out.print("\nRound key = ");
 //				displayBits(subkey[15-n]);
 			} else {
-				newR = fiestel(R, KS(n, keyBits));
+				newR = fiestel(R, KS(n, keyBits), n);
 //				System.out.print("\nRound key = ");
 //				displayBits(subkey[n]);
 			}
@@ -327,10 +327,11 @@ class DES {
 		return Kn;
 	}
 	
-	private static int[] fiestel(int[] R, int[] roundKey) {
+	private static int[] fiestel(int[] R, int[] roundKey, int n) {
 		// Method to implement Fiestel function.
 		// First the 32 bits of the R array are expanded using E table.
                 
+                System.out.println("Output of PC2 = K"+n+" = "+Arrays.toString(roundKey).replace("[", "").replace(",", "").replace("]", ""));
 		int expandedR[] = new int[48];
 		for(int i=0 ; i < 48 ; i++) {
 			expandedR[i] = R[E[i]-1];
