@@ -272,6 +272,7 @@ class DES {
 		for(i=0 ; i < 64 ; i++) {
 			finalOutput[i] = output[FP[i]-1];
 		}
+/***********/   System.out.println("IP¯¹ = "+Arrays.toString(finalOutput).replace(",", "").replace("[", "").replace("]", " ").replace(" ", ""));
 		
 		// Since the final output is stored as an int array of bits, we convert
 		// it into a hex string:
@@ -306,9 +307,9 @@ class DES {
 		// leftShift() method is used for rotation (the rotation is basically)
 		// a left shift operation, hence the name.
 		C1 = leftShift(C, rotationTimes);
-/***********/   System.out.println("LS"+round+" = "+Arrays.toString(C1).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
+/***********/   System.out.println("LS"+(round+1)+" = "+Arrays.toString(C1).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		D1 = leftShift(D, rotationTimes);
-/***********/   System.out.println("LS"+round+" = "+Arrays.toString(D1).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
+/***********/   System.out.println("LS"+(round+1)+" = "+Arrays.toString(D1).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
 		// CnDn stores the combined C1 and D1 halves
 		int CnDn[] = new int[56];
 		System.arraycopy(C1, 0, CnDn, 0, 28);
@@ -331,7 +332,7 @@ class DES {
 		// Method to implement Fiestel function.
 		// First the 32 bits of the R array are expanded using E table.
                 
-                System.out.println("Output of PC2 = K"+n+" = "+Arrays.toString(roundKey).replace("[", "").replace(",", "").replace("]", "").replace(" ", ""));
+                System.out.println("Output of PC2 = K"+(n+1)+" = "+Arrays.toString(roundKey).replace("[", "").replace(",", "").replace("]", "").replace(" ", ""));
 		int expandedR[] = new int[48];
 		for(int i=0 ; i < 48 ; i++) {
 			expandedR[i] = R[E[i]-1];
