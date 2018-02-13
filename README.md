@@ -8,7 +8,15 @@ This program take PT & Key as input of 16 hexadecimal characters and then conver
 PT = 123abc456def7890<br />
 Key = 3b3898371520f75e<br />
 
-### OUTPUT ###
+### Sample Run ###
+Enter the input as a 16 character hexadecimal value:<br />
+123abc456def7890<br />
+PT = 0001001000111010101111000100010101101101111011110111100010010000<br />
+
+Enter the key as a 16 character hexadecimal value:<br />
+3b3898371520f75e<br />
+Key = 0011101100111000100110000011011100010101001000001111011101011110<br />
+
 +++ ENCRYPTION +++<br />
 IP = 0111100011000111001111000011100010100100011101100111011000100011<br />
 PC1 = 01000100110000000110101111011100100111011000100001111111<br />
