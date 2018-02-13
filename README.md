@@ -1,10 +1,12 @@
-# Crypto-DES-Assignment #
+# Crypto-DES-Assignment
 DES Encryption and Decryption java program
 
-## Sample Program working ##
+## Working
 This program take PT & Key as input of 16 hexadecimal characters and then convert it to binary to perform all operations. At the end final encrypted text is converted again to hexadecimal format.
 
-Let suppose i enter PT = 123abc456def7890 and Key = 3b3898371520f75e then it will give me below output
+ ## Sample Input
+PT = 123abc456def7890
+Key = 3b3898371520f75e
 
 ### OUTPUT ###
 +++ ENCRYPTION +++<br />
