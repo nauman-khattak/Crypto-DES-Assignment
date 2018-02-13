@@ -5,8 +5,8 @@ DES Encryption and Decryption java program
 This program take PT & Key as input of 16 hexadecimal characters and then convert it to binary to perform all operations. At the end final encrypted text is converted again to hexadecimal format.
 
  ## Sample Input
-PT = 123abc456def7890
-Key = 3b3898371520f75e
+PT = 123abc456def7890<br />
+Key = 3b3898371520f75e<br />
 
 ### OUTPUT ###
 +++ ENCRYPTION +++<br />
