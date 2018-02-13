@@ -1,7 +1,7 @@
-### Crypto-DES-Assignment
+Markup : #  Crypto-DES-Assignment #
 DES Encryption and Decryption java program
 
-##Sample input PT: 123abc456def7890
+###Sample input PT: 123abc456def7890
 ##Sample input Key: 3b3898371520f75e
 
 #Output
