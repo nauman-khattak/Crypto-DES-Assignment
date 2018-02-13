@@ -269,7 +269,7 @@ class DES {
             R = newL;
             if (n == 15) {
                 System.out.println("\nOutput of round" + (n + 1)+" = "+ Arrays.toString(L).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "") + Arrays.toString(R).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
-                System.out.println("32 bit swapped output of round"+(n+1)+" = "+Arrays.toString(newL).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "")+Arrays.toString(R).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
+                System.out.println("32 bit swapped output of round"+(n+1)+" = "+Arrays.toString(newL).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "")+Arrays.toString(L).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
             } else {
                 System.out.println("\nOutput of round" + (n + 1) + " = Input to round" + (n + 2) + " = " + Arrays.toString(L).replace(",", "").replace("[", "").replace("]", " ").replace(" ", "") + Arrays.toString(R).replace(",", "").replace("[", "").replace("]", "").replace(" ", ""));
             }
