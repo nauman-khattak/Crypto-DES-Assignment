@@ -2,11 +2,15 @@
 DES Encryption and Decryption java program
 
 ## Working
-This program take PT & Key as input of 16 hexadecimal characters and then convert it to binary to perform all operations. At the end final encrypted text is converted again to hexadecimal format.
+This program take PT & Key as input of 16 hexadecimal characters and then convert it to binary to perform all operations.<br /> 
+At the end final encrypted text is converted again to hexadecimal format.<br />
 
- ## Sample Input
+## Sample Input
 PT = 123abc456def7890<br />
 Key = 3b3898371520f75e<br />
+
+## Flowchart
+View "Graphical Flow.svg"<br />
 
 ### Sample Run ###
 Enter the input as a 16 character hexadecimal value:<br />
